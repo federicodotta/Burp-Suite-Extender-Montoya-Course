@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.fd.montoyatutorial'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'net.portswigger.burp.extensions:montoya-api:+'
+}
+
+jar {
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
