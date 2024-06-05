@@ -9,10 +9,10 @@ You can find the tutorial already published here:
 * [Part 2 - Inspecting and modifying HTTP requests and responses](https://security.humanativaspa.it/extending-burp-suite-for-fun-and-profit-the-montoya-way-part-2)
 * [Part 3 - Inspecting and modifying WebSocket messages](https://security.humanativaspa.it/extending-burp-suite-for-fun-and-profit-the-montoya-way-part-3)
 * [Part 4 - Creating new tabs for processing HTTP requests and responses](https://security.humanativaspa.it/extending-burp-suite-for-fun-and-profit-the-montoya-way-part-4)
+* [Part 5 - Adding new functionality to the context menu (accessible by right-clicking)](https://security.humanativaspa.it/extending-burp-suite-for-fun-and-profit-the-montoya-way-part-5)
 
 And this is a little preview of the topics of the next articles:
 
-* Part 5 - Adding new functionality to the context menu (accessible by right-clicking)
 * Part 6 - Adding new checks to Burp Suite Active and Passive Scanner
 * Part 7 - Using the Collaborator in our Burp Suite plugins
 * ... and much more still to be defined (extending the Intruder and the Proxy, creating a GUI for our plugin, ...)
