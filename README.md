@@ -12,9 +12,5 @@ You can find the tutorial already published here:
 * [Part 5 - Adding new functionality to the context menu (accessible by right-clicking)](https://security.humanativaspa.it/extending-burp-suite-for-fun-and-profit-the-montoya-way-part-5)
 * [Part 6 - Adding new checks to Burp Suite Active and Passive Scanner](https://security.humanativaspa.it/extending-burp-suite-for-fun-and-profit-the-montoya-way-part-6)
 * [Part 7 - Using the Collaborator in our Burp Suite plugins](https://security.humanativaspa.it/extending-burp-suite-for-fun-and-profit-the-montoya-way-part-7)
+* [Part 8 - BChecks: a quick way to extend Burp Suite Active and Passive Scanner](https://security.humanativaspa.it/extending-burp-suite-for-fun-and-profit-the-montoya-way-part-8)
 
-
-And this is a little preview of the topics of the next articles:
-
-* Part 8 - BChecks: a quick way to extend Burp Suite Active and Passive Scanner
-* ... and much more still to be defined (extending the Intruder and the Proxy, creating a GUI for our plugin, ...)

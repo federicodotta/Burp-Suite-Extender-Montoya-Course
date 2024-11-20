@@ -1,0 +1,31 @@
+metadata:
+    language: v2-beta
+    name: "SQL Injection (less FP)"
+    description: "Active detection of SQL Injection with less false positives"
+    author: "Federico Dotta"
+    tags: "SQL injection", "SQL"
+
+
+given any insertion point then
+        
+    send payload:            
+        appending: "'"
+
+        if {to_lower(latest.response.body)} matches "mysql|mariadb|sqlite|mssql|db2|pgsql|sql" then
+
+            send payload:            
+            appending: "''"
+
+            if not({to_lower(latest.response.body)} matches "mysql|mariadb|sqlite|mssql|db2|pgsql|sql") then
+
+	            report issue:
+	
+					name: "SQL Injection (less FP)"
+					severity: high
+					confidence: firm
+					detail: "The parameter seems to be vulnerable to SQL Injection"
+					remediation: "Apply parameterized query to all SQL queries."               
+
+            end if
+
+        end if

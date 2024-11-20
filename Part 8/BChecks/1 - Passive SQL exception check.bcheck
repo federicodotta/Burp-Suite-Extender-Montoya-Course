@@ -1,0 +1,20 @@
+metadata:
+    language: v2-beta
+    name: "SQL error"
+    description: "Passive detection for SQL errors"
+    author: "Federico Dotta"
+    tags: "SQL injection", "passive", "SQL"
+
+given response then
+
+    if {to_lower(latest.response.body)} matches "mysql|mariadb|sqlite|mssql|db2|pgsql|sql" then
+
+	    report issue:
+	
+			name: "SQL exception - Potential SQL Injection"
+			severity: info
+			confidence: tentative
+			detail: "The response body potentially includes a SQL exception. Check for SQL injections."
+			remediation: "Remove verbose errors and apply parameterized query to all SQL queries."               
+
+    end if

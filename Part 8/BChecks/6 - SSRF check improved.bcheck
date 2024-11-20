@@ -1,0 +1,34 @@
+metadata:
+    language: v2-beta
+    name: "SSRF"
+    description: "Active detection of SSRF with Collaborator"
+    author: "Federico Dotta"
+    tags: "SSRF", "Collaborator", "External interaction"
+
+
+given any insertion point then
+        
+    send payload:            
+        replacing: `http://{generate_collaborator_address()}`
+
+        if http interactions then
+
+            report issue:
+
+				name: "SSRF (HTTP interaction)"
+				severity: high
+				confidence: firm
+				detail: "The parameter is vulnerable to SSRF. An HTTP interaction has been received."
+				remediation: "Avoid contacting arbitrary URL supplied by user"               
+
+        else if dns interactions then
+
+            report issue:
+
+                name: "Potential SSRF (DNS interaction)"
+                severity: medium
+                confidence: firm
+                detail: "The parameter may be vulnerable to SSRF. Only DNS interaction has been received, maybe for egress filtering."
+                remediation: "Avoid contacting arbitrary URL supplied by user"
+
+        end if

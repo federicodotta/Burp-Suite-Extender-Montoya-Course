@@ -1,0 +1,24 @@
+metadata:
+    language: v2-beta
+    name: "SQL Injection"
+    description: "Active detection of SQL Injection"
+    author: "Federico Dotta"
+    tags: "SQL injection", "SQL"
+
+
+given any insertion point then
+        
+    send payload:            
+        appending: "'"
+
+        if {to_lower(latest.response.body)} matches "mysql|mariadb|sqlite|mssql|db2|pgsql|sql" then
+
+            report issue:
+
+				name: "SQL Injection"
+				severity: high
+				confidence: tentative
+				detail: "The parameter seems to be vulnerable to SQL Injection"
+				remediation: "Apply parameterized query to all SQL queries."               
+
+        end if

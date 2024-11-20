@@ -1,0 +1,34 @@
+metadata:
+    language: v2-beta
+    name: "Blind SQL Injection"
+    description: "Active detection of blind SQL Injection"
+    author: "Federico Dotta"
+    tags: "SQL injection", "blind", "SQL"
+
+define:
+    blind_payload_true = "' AND '534'='534"
+    blind_payload_false = "' AND '534'='535"
+
+given any insertion point then
+            
+    send payload called positive:            
+        appending: {blind_payload_true}
+
+    if {base.response.body} is {positive.response.body} then
+
+        send payload called negative:            
+            appending: {blind_payload_false}
+
+        if not({positive.response.body} is {negative.response.body}) then
+
+            report issue:
+
+				name: "SQL Injection"
+				severity: high
+				confidence: tentative
+				detail: "The parameter seems to be vulnerable to SQL Injection (blind boolean based)"
+				remediation: "Apply parameterized query to all SQL queries."               
+
+        end if
+
+    end if
