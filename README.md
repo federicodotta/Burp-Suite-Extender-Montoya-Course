@@ -13,4 +13,5 @@ You can find the tutorial already published here:
 * [Part 6 - Adding new checks to Burp Suite Active and Passive Scanner](https://security.humanativaspa.it/extending-burp-suite-for-fun-and-profit-the-montoya-way-part-6)
 * [Part 7 - Using the Collaborator in our Burp Suite plugins](https://security.humanativaspa.it/extending-burp-suite-for-fun-and-profit-the-montoya-way-part-7)
 * [Part 8 - BChecks: a quick way to extend Burp Suite Active and Passive Scanner](https://security.humanativaspa.it/extending-burp-suite-for-fun-and-profit-the-montoya-way-part-8)
+* [Part 9 - Custom scan checks - An improved quick way to extend Burp Suite Active and Passive Scanner](https://security.humanativaspa.it/extending-burp-suite-for-fun-and-profit-the-montoya-way-part-9)
 
